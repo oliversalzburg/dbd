@@ -9,7 +9,7 @@
 //
 // @include        http://*
 //
-// @version        0.1
+// @version        0.2
 //
 // ==/UserScript==
 
@@ -37,7 +37,7 @@ if( htmlElement && htmlElement[ 0 ] ) {
   htmlElement[ 0 ].appendChild( style );
 
   addClass( htmlElement[ 0 ], "black-html" );
-  window.onload = function() {
+  window.addEventListener( "load", function() {
     removeClass( htmlElement[ 0 ], "black-html" );
-  }
+  }, false );
 }
