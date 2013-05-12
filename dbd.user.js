@@ -28,6 +28,14 @@ function removeClass(el, name) {
 
 var htmlElement = document.getElementsByTagName( "html" );
 if( htmlElement && htmlElement[ 0 ] ) {
+  // From http://stackoverflow.com/questions/1720320/how-to-dynamically-create-css-class-in-javascript-and-apply
+  var style = document.createElement( "style" );
+  style.type = "text/css";
+  style.innerHTML = ".black-html { background-color: #000; }";
+
+  // We just put the style element on the html element
+  htmlElement[ 0 ].appendChild( style );
+
   addClass( htmlElement[ 0 ], "black-html" );
   window.onload = function() {
     removeClass( htmlElement[ 0 ], "black-html" );
