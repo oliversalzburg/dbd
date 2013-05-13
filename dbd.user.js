@@ -9,7 +9,7 @@
 //
 // @include        http://*
 //
-// @version        0.2
+// @version        0.4
 //
 // ==/UserScript==
 
@@ -36,6 +36,8 @@ if( htmlElement && htmlElement[ 0 ] ) {
   // We just put the style element on the html element
   htmlElement[ 0 ].appendChild( style );
 
+  htmlElement[ 0 ].setAttribute( "dark-by-default", "dark-by-default" );
+  addClass( htmlElement[ 0 ], "dark-by-default" );
   addClass( htmlElement[ 0 ], "black-html" );
   window.addEventListener( "load", function() {
     removeClass( htmlElement[ 0 ], "black-html" );
